@@ -7,6 +7,10 @@ import {DeseosService} from '../../services/deseos.service';
 })
 export class Tab1Page {
 
-  constructor(public deseosService:DeseosService) {}
+  // mostrar:any[]=[];
+  constructor(public deseosService:DeseosService) {
+
+      // this.mostrar=this.deseosService.listas;
+  }
 
 }

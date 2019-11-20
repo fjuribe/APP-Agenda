@@ -10,6 +10,14 @@ export class DeseosService {
   
   constructor() { 
 
-  console.log('Servicio inicializado');
+  // console.log('Servicio inicializado');
+
+  const lista1=new Lista('recolectar herramientas del infinito');
+  const lista2=new Lista('heroe a desaparecer');
+
+  this.listas.push(lista1,lista2);
+
+  console.log(this.listas);
+
 }
 }
