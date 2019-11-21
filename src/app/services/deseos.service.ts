@@ -11,11 +11,12 @@ export class DeseosService {
   constructor() { 
 
   // console.log('Servicio inicializado');
+  this.cargarStorage();
+  
+  // const lista1=new Lista('recolectar herramientas del infinito');
+  // const lista2=new Lista('heroe a desaparecer');
 
-  const lista1=new Lista('recolectar herramientas del infinito');
-  const lista2=new Lista('heroe a desaparecer');
-
-  this.listas.push(lista1,lista2);
+  // this.listas.push(lista1,lista2);
 
   console.log(this.listas);
 
@@ -25,5 +26,24 @@ export class DeseosService {
 crearLista(titulo:string){
     const nuevaLista=new Lista(titulo);
     this.listas.push(nuevaLista);
+    this.guardarStorage();
+}
+
+
+guardarStorage(){
+
+    localStorage.setItem('data',JSON.stringify(this.listas));
+}
+
+
+
+
+cargarStorage(){
+     if(localStorage){
+             this.listas=JSON.parse(localStorage.getItem('data'));
+     }
+     else{
+     	this.listas=[];
+     }
 }
 }
