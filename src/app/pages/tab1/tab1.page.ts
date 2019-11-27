@@ -22,11 +22,13 @@ async agregarLista(){
 
 	 const alert = await this.alertController.create({
       header: 'Nueva lista',
-      inputs:[{
+      inputs:[
+      {
           name:'titulo',
           type:'text',
           placeholder:'Nombre de la lista'
-      }],
+        }
+      ],
       buttons: [
              {
              	text:'Cancelar',
@@ -44,8 +46,11 @@ async agregarLista(){
                            return;
                   }
 
+                 const listaId = this.deseosService.crearLista(data.titulo);
+                  
+
                   //tengo que crear la lista
-                  this.deseosService.crearLista(data.titulo);
+                  this.router.navigateByUrl(`/tabs/tab1/agregar/${listaId}`);
              	}
              }
         ]
