@@ -68,4 +68,8 @@ borrarLista(lista:Lista){
   });
 
 }
+
+editarLista(){
+  
+}
 }
